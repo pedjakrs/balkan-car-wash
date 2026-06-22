@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0f766e">
+<title>Balkan Car Wash</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-view="dashboard" data-role="admin">
+
+<!-- Mobilni overlay za sidebar -->
+<div id="scrim" class="scrim" hidden></div>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13"/>
+        <path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+        <circle cx="7" cy="15.5" r="0.6"/><circle cx="17" cy="15.5" r="0.6"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <strong>Balkan</strong>
+      <span>Car Wash</span>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Glavni meni"></nav>
+
+  <div class="sidebar-foot">
+    <div class="conn" id="connBadge" title="Status veze">
+      <span class="dot"></span><span class="conn-label">Demo režim</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ GLAVNI DEO ============ -->
+<div class="app">
+  <header class="topbar">
+    <button class="icon-btn burger" id="burger" aria-label="Meni">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+    <div class="topbar-title">
+      <h1 id="viewTitle">Dashboard</h1>
+      <p id="viewSub" class="muted"></p>
+    </div>
+
+    <div class="topbar-tools">
+      <label class="month-pick">
+        <span class="sr-only">Mesec</span>
+        <input type="month" id="monthPick">
+      </label>
+
+      <div class="role-toggle" role="group" aria-label="Prikaz">
+        <button data-role="admin" class="is-active">Admin</button>
+        <button data-role="radnik">Radnik</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content" id="content">
+    <!-- Pojedinačni moduli se ubacuju ovde iz app.js -->
+  </main>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-root" id="modalRoot" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal-head">
+      <h2 id="modalTitle">Naslov</h2>
+      <button class="icon-btn" data-close aria-label="Zatvori">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="modal-body" id="modalBody"></div>
+    <footer class="modal-foot" id="modalFoot"></footer>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- Biblioteke (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
